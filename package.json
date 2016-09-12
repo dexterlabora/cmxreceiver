@@ -1,0 +1,15 @@
+{
+  "name": "cmx",
+  "version": "1.0.0",
+  "description": "Cisco Meraki CMX receiver",
+  "main": "cmxreceiver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cory Guynn",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
