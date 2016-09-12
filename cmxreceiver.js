@@ -5,20 +5,20 @@ A basic web service to accept CMX data from a Cisco Meraki network
 - Accept a GET request from Meraki and respond with a validator
 - Meraki will POST to server, if validated.
 - POST will contain a secret, which can be verified by the server.
-- JSON data will be in the req.body.data
+- JSON data will be in the req.body.data. This will be available in the cmxData function's data object.
 
 -- This skeleton app will only place the data received on the console. It's up to the developer to use this how ever required
 
 */
 
-// CHANGE THESE CONFIGURATIONS 
-var port = 1890;
-var secret = "testing123"
-var validator = "8e0846499d9a3f6c23f7868c4c25b9d6325035f5";
+// CHANGE THESE CONFIGURATIONS to match your requirements
+var port = process.env.PORT || 1890;
+var secret = process.env.SECRET || "enterYourSecret";
+var validator = process.env.VALIDATOR || "enterYourValidator";
 
 // All CMX JSON data will end up here. Send it to a database or whatever you fancy.
 function cmxData(data){
-	console.log("JSON Feed: "+JSON.stringify(req.body, null, 2));
+	console.log("JSON Feed: "+JSON.stringify(data, null, 2));
 };
 
 
