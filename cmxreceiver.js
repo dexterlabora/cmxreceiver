@@ -39,7 +39,6 @@ app.get('/cmx', function (req, res) {
 });
 
 app.post('/cmx', function (req, res) {
-    var secret = "testing123";
     if(req.body.secret == secret){
         // DO SOMETHING WITH THE JSON
         console.log("Secret verified");
