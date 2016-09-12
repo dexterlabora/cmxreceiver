@@ -42,7 +42,7 @@ app.post('/cmx', function (req, res) {
     if(req.body.secret == secret){
         // DO SOMETHING WITH THE JSON
         console.log("Secret verified");
-	cmxData(req.body);
+	    cmxData(req.body);
     }else{
         console.log("Secret was invalid");
     }
