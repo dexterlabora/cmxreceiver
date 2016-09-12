@@ -16,6 +16,9 @@ to a database.
 ## Configuration
 Modify the `cmxreceiver.js` file with your correct service port, secret, validator. Then, do something with the data (i.e database)
 
+Alternatively, you can define the parameters at runtime using environment variables (except for the DB piece) by typing this at the shell.
+`VALIDATOR="8e0846499d9a3f6c23f7868c4cFFFFd63250FFFF" SECRET="testing123" node cmxreceiver.js`
+
 ## Default post URL
 http://yourserver:1890/cmx
 
@@ -41,9 +44,8 @@ https://meraki.cisco.com/
 ## Sample Console Experience 
 
 ```
-CMX Receiver listening on port: 8080
+CMX Receiver listening on port: 1890
 Validator = 8e0846499d9a3f6c23f7868c4c25b9d63250FFFF
-Secret was invalid
 Secret verified
 JSON Feed: {
   "version": "2.0",
