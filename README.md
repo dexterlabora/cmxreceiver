@@ -13,11 +13,34 @@ Once the data has been received, it is sent to the cmxData(data) function, where
 in the `data` object. This example simply prints the contents to the console. Ideally, this would be sent
 to a database. 
 
+## Install
+```
+git clone https://github.com/dexterlabora/cmxreceiver.git
+cd cmxreceiver
+npm install
+```
+
 ## Configuration
-Modify the `cmxreceiver.js` file with your correct service port, secret, validator. Then, do something with the data (i.e database)
+Modify the `cmxreceiver.js` file with your correct service port, secret, validator. 
+
+Then, do something with the `data` (i.e write to database) by modifying this function:
+
+```
+function cmxData(data){
+	console.log("JSON Feed: "+JSON.stringify(data, null, 2));
+};
+```
+
+## Run
+```
+node cmxreceiver.js
+```
 
 Alternatively, you can define the parameters at runtime using environment variables (except for the DB piece) by typing this at the shell.
-`VALIDATOR="8e0846499d9a3f6c23f7868c4cFFFFd63250FFFF" SECRET="testing123" node cmxreceiver.js`
+
+```
+VALIDATOR="8e0846499d9a3f6c23f7868c4cFFFFd63250FFFF" SECRET="testing123" node cmxreceiver.js
+```
 
 ## Default post URL
 http://yourserver:1890/cmx
@@ -44,6 +67,8 @@ https://meraki.cisco.com/
 ## Sample Console Experience 
 
 ```
+$ node cmxreceiver.js
+
 CMX Receiver listening on port: 1890
 Validator = 8e0846499d9a3f6c23f7868c4c25b9d63250FFFF
 Secret verified
