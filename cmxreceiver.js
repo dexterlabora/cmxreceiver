@@ -46,10 +46,12 @@ app.post(route, function(req, res) {
 	if (req.body.secret == secret) {
 		console.log('Secret verified');
 		cmxData(req.body);
+		res.status(201).send();
 	} else {
 		console.log('Secret was invalid');
+		res.status(501).send();
 	}
-	res.status(200);
+	
 });
 
 // Start server
